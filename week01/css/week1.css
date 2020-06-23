@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  color: #494949;
+}
+
+body {
+  background-color: #eee;
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Microsoft JhengHei";
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.wrap {
+  padding: 50px 15px;
+}
+
+.content {
+  max-width: 960px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  min-height: 10em;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  background-color: #55bec5;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px;
+}
+
+.inputWrap {
+  margin: 20px 15px 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.inputWrap .inputAdd {
+  font-family: "Microsoft JhengHei";
+  font-size: 14px;
+  border: none;
+  width: calc(100% - 140px);
+  padding: 7px 10px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+.inputWrap .inputAdd::-webkit-input-placeholder {
+  color: #c4c4c4;
+}
+
+.inputWrap .inputAdd:-ms-input-placeholder {
+  color: #c4c4c4;
+}
+
+.inputWrap .inputAdd::-ms-input-placeholder {
+  color: #c4c4c4;
+}
+
+.inputWrap .inputAdd::placeholder {
+  color: #c4c4c4;
+}
+
+.inputWrap .btnAdd {
+  background-color: #ffa620;
+}
+
+.lists {
+  margin: 10px 15px;
+}
+
+.lists li {
+  margin-bottom: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.lists li:first-child {
+  border-top: 2px dotted #ccc;
+  padding-top: 10px;
+}
+
+.lists .list {
+  margin-left: 10px;
+}
+
+.lists .list.done {
+  text-decoration: line-through;
+}
+
+.lists .btnDel {
+  background-color: transparent;
+  color: #ccc;
+  font-size: 18px;
+}
+
+.totalWrap {
+  border-top: 5px solid #eee;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.totalWrap .btnReset {
+  background-color: #494949;
+}
+
+.totalWrap .totalList {
+  font-size: 130%;
+  color: #be5252;
+}
+/*# sourceMappingURL=week1.css.map */

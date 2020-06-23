@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List - 關注點分離</title>
+  <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css' /> -->
+  <link rel="stylesheet" href="css/week1.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="content">
+      <h1>Todo List</h1>
+      <div class="inputWrap">
+        <span class="inputTitle">代辦事項：</span><input class="inputAdd" type="text" placeholder="準備要做的任務">
+        <button class="btnAdd">新增</button>
+      </div>
+      <ul class="lists">
+        <!-- <li>
+          <label>
+            <input class="check" type="checkbox"><span class="list">項目一</span>
+          </label>
+          <button class="btnDel">x</button>
+        </li> -->
+      </ul>
+      <div class="totalWrap">
+        <p>還有 <span class="totalList">0</span> 筆任務</p>
+        <button class="btnReset">清除所有任務</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    let btnAdd = document.querySelector('.btnAdd');
+    let inputAdd = document.querySelector('.inputAdd');
+    let lists = document.querySelector('.lists');
+    let totalList = document.querySelector('.totalList');
+    let btnReset = document.querySelector('.btnReset');
+    let dataTodo = [];
+
+    let updateView = function (data) {
+      inputAdd.value = '';
+      let str = '';
+      data.forEach((item, idx) => {
+        str += `
+        <li data-id =${idx} >
+          <label>
+            <input class="check" type="checkbox" ${item.done ? 'checked' : ''}><span class="${item.done ? "list done" : "list"}">${item.todo}</span>
+          </label>
+          <button class="btnDel">x</button>
+        </li>
+        `;
+      })
+      lists.innerHTML = str;
+      totalList.textContent = data.length;
+      let checkBoxes = document.querySelectorAll('.check');
+      checkBoxes.forEach(checkBox => {
+        checkBox.addEventListener('change', checkList);
+      })
+      let btnsDel = document.querySelectorAll('.btnDel');
+      btnsDel.forEach(btn => {
+        btn.addEventListener('click', removeList);
+      })
+    }
+    let addList = function (e) {
+      if (inputAdd.value.trim() === '') return alert('請輸入資料！');
+      dataTodo.push({
+        todo: inputAdd.value,
+        done: false
+      })
+      updateView(dataTodo);
+    };
+    let resetList = function () {
+      dataTodo = [];
+      updateView(dataTodo);
+    };
+    let checkList = function (e) {
+      let idx = parseInt(e.target.parentNode.parentNode.dataset.id);
+      dataTodo[idx].done = !(dataTodo[idx].done);
+      updateView(dataTodo);
+    }
+    let removeList = function (e) {
+      let idx = parseInt(e.target.parentNode.parentNode.dataset.id);
+      dataTodo.splice(idx, 1);
+      updateView(dataTodo);
+    };
+    btnAdd.addEventListener('click', addList);
+    inputAdd.addEventListener('keyup', function (e) {
+      if (e.keyCode === 13) addList();
+    })
+    btnReset.addEventListener('click', resetList);
+  </script>
+</body>
+
+</html>
