@@ -32,11 +32,11 @@
     </div>
   </div>
   <script>
-    let btnAdd = document.querySelector('.btnAdd');
-    let inputAdd = document.querySelector('.inputAdd');
-    let lists = document.querySelector('.lists');
-    let totalList = document.querySelector('.totalList');
-    let btnReset = document.querySelector('.btnReset');
+    const btnAdd = document.querySelector('.btnAdd');
+    const inputAdd = document.querySelector('.inputAdd');
+    const lists = document.querySelector('.lists');
+    const totalList = document.querySelector('.totalList');
+    const btnReset = document.querySelector('.btnReset');
     let dataTodo = [];
 
     let updateView = function (data) {
@@ -81,7 +81,7 @@
       updateView(dataTodo);
     }
     let removeList = function (e) {
-      let idx = parseInt(e.target.parentNode.parentNode.dataset.id);
+      let idx = parseInt(e.target.parentNode.dataset.id);
       dataTodo.splice(idx, 1);
       updateView(dataTodo);
     };
