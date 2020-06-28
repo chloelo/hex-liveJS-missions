@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API 練習 - 讀取遠端資料，並以列表呈現</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/layout.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.png" />
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" href="#">首頁 <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link active" href="#">產品列表</a>
+          <a class="nav-item nav-link" href="#">最新消息</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section>
+    <div class="container product_list">
+      <div class="row">
+        <div class="col-12">
+          <nav class="sec_menu d-flex justify-content-around">
+            <a href="#" class="asia active">亞洲</a>
+            <a href="#" class="africa">非洲</a>
+            <a href="#" class="america">美洲</a>
+            <a href="#" class="oceania">大洋洲</a>
+          </nav>
+
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-4 lists">
+        <!-- <div class="col mb-4">
+          <div class="card">
+            <div class="img_wrap">
+              <img
+                src="https://images.unsplash.com/photo-1575467627652-0c597f6dba77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
+                class="card-img-top" alt="...">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">【台灣】嘉義大人囝仔 2 日遊</h5>
+              <p>波波草正夯，免飛日本，現蹤嘉義故宮南院</p>
+              <p class="prices d-flex justify-content-between">
+                <span class="price_origin">5,999/人</span>
+                <span class="price_discount">2,699/起</span>
+              </p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+
+    const obj = {
+      data: {
+        uuid: '27645507-6c88-4d1b-816f-1587210ac2be',
+        products: [],
+      },
+      getData() {
+        const vm = this;
+        const api = `https://course-ec-api.hexschool.io/api/${vm.data.uuid}/ec/products`;
+        axios.get(api)
+          .then(function (res) {
+            console.log(res.data.data);
+            vm.data.products = res.data.data;
+            vm.render();
+          }).catch(function (err) {
+            console.log(`錯誤訊息為：${err}`);
+          })
+      },
+      render() {
+        const vm = this;
+        let str = '';
+        vm.data.products.forEach(function (product) {
+          str += `
+            <div class="col mb-4">
+              <div class="card">
+                <div class="img_wrap">
+                  <img
+                    src="${product.imageUrl[0]}"
+                    class="card-img-top">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">${product.title}</h5>
+                  <p>${product.content}</p>
+                  <p class="prices d-flex justify-content-between">
+                    <span class="price_origin">${product.origin_price}/人</span>
+                    <span class="price_discount">${product.price}/起</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+        `;
+        });
+        document.querySelector('.lists').innerHTML = str;
+      }
+
+    };
+    obj.getData();
+
+  </script>
+</body>
+
+</html>

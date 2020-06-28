@@ -1,0 +1,66 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.sec_menu a {
+  font-size: 18px;
+  color: #707070;
+  border-bottom: 2px dotted #707070;
+  padding: 5px 15px;
+  margin: 15px 0;
+}
+
+.sec_menu a:hover {
+  opacity: 0.8;
+}
+
+.sec_menu .asia:hover, .sec_menu .asia.active {
+  color: #6bd2bc;
+  border-bottom: 2px dotted #6bd2bc;
+}
+
+.sec_menu .africa:hover, .sec_menu .africa.active {
+  color: #fe6b88;
+  border-bottom: 2px dotted #fe6b88;
+}
+
+.sec_menu .america:hover, .sec_menu .america.active {
+  color: #fcc522;
+  border-bottom: 2px dotted #fcc522;
+}
+
+.sec_menu .oceania:hover, .sec_menu .oceania.active {
+  color: #4fbfeb;
+  border-bottom: 2px dotted #4fbfeb;
+}
+
+.prices {
+  margin-bottom: 0;
+}
+
+.prices .price_origin {
+  font-size: 60%;
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.prices .price_discount {
+  font-size: 120%;
+  color: #fe6b88;
+}
+
+.product_list .img_wrap {
+  height: 230px;
+}
+
+.product_list .img_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=layout.css.map */
