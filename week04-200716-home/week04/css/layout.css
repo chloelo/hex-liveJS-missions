@@ -1,0 +1,159 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 29px;
+  margin-bottom: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: default;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--info);
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px var(--info);
+          box-shadow: 0 0 1px var(--info);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(21px);
+  transform: translateX(21px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 29px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.close {
+  color: #fff;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+.login {
+  background: url("https://images.unsplash.com/photo-1440778303588-435521a205bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") no-repeat center/cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.login .formLogin-wrap {
+  max-width: 100%;
+  width: 35rem;
+  height: auto;
+  margin: 30px 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px 15px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px #aaa;
+          box-shadow: 0px 0px 10px #aaa;
+}
+
+.login h1 {
+  color: #52c2aa;
+  font-size: 32px;
+  text-align: right;
+  border-bottom: 3px solid rgba(82, 194, 170, 0.5);
+  margin-bottom: 15px;
+}
+
+.login input {
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.login .btn-login {
+  background-color: #52c2aa;
+  color: #fff;
+  border-radius: 25px;
+  width: 100%;
+  font-size: 120%;
+  margin-top: 0.5rem;
+}
+
+.login .form-control {
+  border: 1px solid rgba(82, 194, 170, 0.5);
+}
+
+.login .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.page-products h1 {
+  margin-bottom: 0;
+  font-size: 30px;
+}
+
+.page-products nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 15px;
+}
+
+.page-products .sm-img {
+  max-width: 80px;
+}
+/*# sourceMappingURL=layout.css.map */
