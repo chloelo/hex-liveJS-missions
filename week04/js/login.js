@@ -2,24 +2,24 @@
 const apiPath = 'https://course-ec-api.hexschool.io/api/';
 const app = new Vue({
   el: '#app',
-  data() {
+  data () {
     return {
       user: {
         email: '',
         password: '',
       },
-      token: '',
     }
   },
   methods: {
-    login() {
+    login () {
       const api = `${apiPath}auth/login`;
       axios.post(api, this.user)
         .then(res => {
           console.log(res);
-          this.token = res.data.token;
+          const token = res.data.token;
           const expired = res.data.expired;
-          document.cookie = `myToken=${this.token}; expires=${new Date(expired * 1000)}; path=/`;
+          // 取出token，再用 cookie 把 token 存起來
+          document.cookie = `myToken=${token}; expires=${new Date(expired * 1000)}; path=/`;
           location.href = "products.html";
         }
         ).catch(err => {

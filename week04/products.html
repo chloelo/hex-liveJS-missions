@@ -80,14 +80,14 @@
       </div>
     </div>
 
-    <product-modal :outer-is-upload="imgUploading" :outer-is-new="isNew" :outer-temp="tempProduct"
+    <!-- <product-modal :outer-is-upload="imgUploading" :outer-is-new="isNew" :outer-temp="tempProduct"
       @emitUpdate="updateProduct" @emitFile="uploadFile">
     </product-modal>
-    <product-modal-del :outer-temp="tempProduct" @emit-del="deleteProduct(id)"></product-modal-del>
+    <product-modal-del :outer-temp="tempProduct" @emit-del="deleteProduct(id)"></product-modal-del> -->
 
 
     <!-- 沒有元件化的 modal 可以執行-->
-    <!-- <div id="productModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div id="productModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content border-0">
@@ -180,9 +180,9 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
-    <!-- <div id="delProductModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div id="delProductModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content border-0">
@@ -208,7 +208,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 
 
