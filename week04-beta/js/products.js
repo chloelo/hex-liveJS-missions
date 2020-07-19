@@ -42,10 +42,10 @@ const app = new Vue({
       document.cookie = `myToken=; expires=; path=/`;
       location.href = "login.html";
     },
-    // 取得產品列表
-    getProducts () {
+    // 取得產品列表，預設如果有多頁的話，傳入第一頁
+    getProducts (page = 1) {
       // API
-      const api = `${apiPath}${this.user.uuid}/admin/ec/products`
+      const api = `${apiPath}${this.user.uuid}/admin/ec/products?page=${page}`
       // 將 Token 加入到 Headers 內
       axios.defaults.headers.common['Authorization'] = `Bearer ${this.user.token}`;
       axios.get(api)
@@ -151,7 +151,8 @@ const app = new Vue({
         }).catch(err => {
           console.log(err);
         })
-    }
+    },
+
   },
   mounted () {
     // 如果沒有token 表示沒有登入，轉跳回登入頁

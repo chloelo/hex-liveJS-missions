@@ -59,25 +59,33 @@
               </tbody>
             </table>
           </div>
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
+
+          <!--未元件化時可操作  -->
+          <!-- 分頁在 li 上如果加 class "disabled" 就不能點擊-->
+          <!-- https://getbootstrap.com/docs/4.5/components/pagination/ -->
+          <!-- <nav aria-label="Page navigation exampl">
+            <ul class="pagination ml-auto">
+              <li class="page-item" :class="{disabled:pagination.current_page ===1 }">
+                <a class="page-link" href="#" aria-label="Previous"
+                  @click.prevent="getProducts(pagination.current_page - 1)">
                   <span aria-hidden="true">&laquo;</span>
                 </a>
               </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
+              <li class="page-item" :class="{active:pagination.current_page === idx+1}"
+                v-for=" (item,idx) of pagination.total_pages" :key="idx+1">
+                <a class="page-link" href="#" @click.prevent="getProducts(idx +1)">{{idx +1}}</a>
+              </li>
+              <li class="page-item" :class="{disabled:pagination.current_page === pagination.total_pages}">
+                <a class="page-link" href="#" aria-label="Next"
+                  @click.prevent="getProducts(pagination.current_page + 1)">
                   <span aria-hidden="true">&raquo;</span>
                 </a>
               </li>
             </ul>
-          </nav>
+          </nav> -->
         </div>
       </div>
+      <pagination :outer-pages="pagination" @emit-page="getProducts"></pagination>
     </div>
 
     <product-modal :outer-is-upload="imgUploading" :outer-is-new="isNew" :outer-temp="tempProduct"
@@ -228,11 +236,12 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
   <script src="js/modals.js"></script>
+  <script src="js/pagination.js"></script>
   <script src="js/products.js"></script>
 </body>
 
 </html>
 
 <!-- 想請問一下
-  目前寫作業寫到把 updateProduct 和 delProduct 兩個跳出視窗的 modal 變成組件，可是props 和 emit 的應用一直卡住，本來是只想把 tempProduct 用 props 帶到組件，原先modal
-  有用到 methods 的地方我都用 emit，但發現 tempProduct 都沒有送到組件裡，搞不清楚哪些 methods 要放到組件內，哪些要放在 Vue 實例最外層，助教的檔案裡有些寫法不太明白 $refs 這個又是什麼呢？ -->
+  props 和 emit 的應用一直卡住，本來是只想把 tempProduct 用 props 帶到組件，原先 modal
+  有用到 methods 的地方我都用 emit，但發現 tempProduct 用直接賦值得方式都沒有送到組件裡，還有...搞不清楚哪些 methods 要放到組件內，哪些要放在 Vue 實例最外層，助教的檔案裡有些寫法不太明白 Orz  -->

@@ -24,7 +24,8 @@ Vue.component('productModal', {
                 <div class="form-group">
                   <label for="customFile">
                     或 上傳圖片
-                    <i v-if="outerIsUpload" class="fas fa-spinner fa-spin"></i>
+                    <span v-if="outerIsUpload"><i class="fas fa-spinner fa-spin"></i></span>
+                    
                   </label>
                   <input id="customFile" type="file" class="form-control" @change="innerUpload">
                 </div>
@@ -96,6 +97,7 @@ Vue.component('productModal', {
       </div>
     </div>
   `,
+  // 助教的寫法 是用物件，不太會寫這邊怎麼操作資料 Orz
   // props: {
   //   outerIsNew: '',
   //   outerIsUpload: '',
@@ -114,7 +116,7 @@ Vue.component('productModal', {
       // 資料無法賦值，不是說v-model不要直接改 props 嗎? 但助教範例卻直接改 為什麼可以呢?
     }
   },
-  computed: {
+  computed: { // 這是助教的教法 可是還是想知道為什麼直接按照影片 在 data 裡賦值不行QQ
     innerProduct: function () {
       return this.outerTemp;
     }
