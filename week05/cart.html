@@ -41,43 +41,6 @@
                   <span class="cart-num">{{totalQuantity}}</span>
                 </span></a>
             </li>
-            <!-- <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle nav-link-cart" href="#" id="navbarDropdownMenuLink" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="icon-cart-wrap">
-                  <i class="fas fa-shopping-cart"></i>
-                  <span class="cart-num">{{totalQuantity}}</span>
-                </span>
-              </a>
-              <div class="cart-popup dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                <div class="table-responsive dropdown-cart-list">
-                  <table class="table table-sm table-striped">
-                    <caption>已選擇商品</caption>
-                    <thead>
-                      <tr>
-                        <th scope="col">品名</th>
-                        <th scope="col">數量</th>
-                        <th scope="col">單價</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr v-for="item in carts" :key="item.product.id">
-                        <td>{{item.product.title}}</td>
-                        <td>{{item.quantity}}</td>
-                        <td>{{item.product.price| money}}</td>
-                      </tr>
-
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <td colspan="3" class="text-right">總計：{{totalPrice| money}}</td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                  <a class="bg-info text-white text-center" href="cart.html">前往結帳</a>
-                </div>
-              </div>
-            </li> -->
           </ul>
         </div>
       </nav>
@@ -87,19 +50,12 @@
         <div class="row">
           <div class="col-lg-7">
             <div class="form-cart-list">
-
-              <!-- <h3 class="text-info">購物車清單</h3> -->
-
-              <!-- <div class="d-flex justify-content-end">
-                  <button type="button" class="btn btn-outline-danger"><span><i class="fas fa-trash-alt"></i></span>
-                    清空購物車</button>
-                </div> -->
               <h3 class="text-info ">購物車清單</h3>
               <table class="table table-responsive-sm table-cart">
                 <!-- <caption class="text-info">購物車清單</caption> -->
                 <thead>
                   <tr>
-                    <th scope="col">移除</th>
+                    <th scope="col" width="60px">移除</th>
                     <th scope="col">品名</th>
                     <th scope="col">單價</th>
                     <th scope="col" width="150px">數量</th>
