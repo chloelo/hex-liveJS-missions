@@ -21,7 +21,8 @@ VeeValidate.configure({
 });
 
 // 千分號
-Vue.filter('money', function (num) {
+// 帶入的參數要給一個預設值，不然在處理非同步資料時，資料尚未回來，帶入 function 會是 undefined，畫面直接會噴錯
+Vue.filter('money', function (num = 0) {
   let parts = num.toString().split('.');
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   return `$${parts.join('.')}`

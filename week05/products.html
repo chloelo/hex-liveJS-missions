@@ -55,7 +55,7 @@
                         <th scope="col">單價</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody v-if="carts.length">
                       <tr v-for="item in carts" :key="item.product.id + 1">
                         <td>{{item.product.title}}</td>
                         <td>{{item.quantity}}</td>
@@ -150,8 +150,8 @@
               </footer>
             </blockquote>
             <div class="d-flex justify-content-between align-items-baseline">
-              <div><del>原價 {{tempProduct.origin_price| money}}</del></div>
-              <div class="text-info">現在只要 <span class="h4"> {{tempProduct.price| money}}</span></div>
+              <div><del>原價 {{ tempProduct.origin_price | money }}</del></div>
+              <div class="text-info">現在只要 <span class="h4"> {{ tempProduct.price | money }}</span></div>
             </div>
             <select v-model="tempProduct.quantity" name class="form-control mt-3">
               <option value="0" disabled selected>
