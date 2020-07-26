@@ -1,0 +1,217 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #707070;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.cart-popup {
+  min-width: 280px;
+  border: none;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-cart-list {
+  padding: 0 15px;
+}
+
+.dropdown-cart-list caption {
+  caption-side: top;
+  text-align: center;
+}
+
+.dropdown-cart-list a {
+  border-radius: 5px;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+}
+
+.dropdown-cart-list a:hover {
+  opacity: 0.8;
+}
+
+.dropdown-cart-list table {
+  margin-bottom: 0;
+}
+
+.dropdown-cart-list th:nth-child(2),
+.dropdown-cart-list td:nth-child(2) {
+  text-align: center;
+}
+
+.dropdown-cart-list th:last-child,
+.dropdown-cart-list td:last-child {
+  text-align: right;
+}
+
+.nav-link-cart .icon-cart-wrap {
+  position: relative;
+}
+
+.nav-link-cart .cart-num {
+  position: absolute;
+  background-color: #d82c4f;
+  color: #fff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: -10px;
+  right: -10px;
+}
+
+.sec_menu a {
+  font-size: 18px;
+  color: #707070;
+  border-bottom: 2px dotted #707070;
+  padding: 5px;
+  margin: 15px 0;
+}
+
+.sec_menu a:hover {
+  opacity: 0.8;
+}
+
+.sec_menu .all:hover, .sec_menu .all.active {
+  color: #6bd2bc;
+  border-bottom: 2px dotted #6bd2bc;
+}
+
+.sec_menu .asia:hover, .sec_menu .asia.active {
+  color: #836849;
+  border-bottom: 2px dotted #836849;
+}
+
+.sec_menu .america:hover, .sec_menu .america.active {
+  color: #d82c4f;
+  border-bottom: 2px dotted #d82c4f;
+}
+
+.sec_menu .africa:hover, .sec_menu .africa.active {
+  color: #d38b2d;
+  border-bottom: 2px dotted #d38b2d;
+}
+
+.sec_menu .oceania:hover, .sec_menu .oceania.active {
+  color: #44add6;
+  border-bottom: 2px dotted #44add6;
+}
+
+.prices {
+  margin-bottom: 0;
+}
+
+.prices .price_origin {
+  font-size: 60%;
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.prices .price_discount {
+  font-size: 120%;
+  color: #d82c4f;
+}
+
+.product_list .img_wrap {
+  height: 230px;
+  position: relative;
+}
+
+.product_list .img_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.product_list .img_wrap .badge {
+  position: absolute;
+  right: -5px;
+  bottom: 8px;
+}
+
+.cart_zone .form-cart-list,
+.cart_zone .order-info {
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 15px 15px 0 15px;
+}
+
+.cart_zone .form-cart-list h3,
+.cart_zone .order-info h3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #707070;
+  border-bottom: 2px solid;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cart_zone .form-cart-list ::-webkit-input-placeholder,
+.cart_zone .order-info ::-webkit-input-placeholder {
+  color: lightgrey;
+}
+
+.cart_zone .form-cart-list :-ms-input-placeholder,
+.cart_zone .order-info :-ms-input-placeholder {
+  color: lightgrey;
+}
+
+.cart_zone .form-cart-list ::-ms-input-placeholder,
+.cart_zone .order-info ::-ms-input-placeholder {
+  color: lightgrey;
+}
+
+.cart_zone .form-cart-list ::placeholder,
+.cart_zone .order-info ::placeholder {
+  color: lightgrey;
+}
+
+.cart_zone .table-cart {
+  font-size: 90%;
+}
+
+.cart_zone .table-cart th {
+  border-top: none;
+  text-align: center;
+}
+
+.cart_zone .table-cart td {
+  vertical-align: middle;
+}
+
+.cart_zone .table-cart td:nth-child(1), .cart_zone .table-cart td:nth-child(3) {
+  text-align: center;
+}
+
+.cart_zone .table-cart td:nth-child(4), .cart_zone .table-cart td:nth-child(5) {
+  text-align: right;
+}
+
+.cart_zone .table-cart .btn-del {
+  font-size: 14px;
+  padding: 3px 6px;
+}
+
+.out-footer {
+  background-color: #707070;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+/*# sourceMappingURL=layout.css.map */
