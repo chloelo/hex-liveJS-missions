@@ -174,8 +174,11 @@ new Vue({
             address: '',
             payment: '',
             message: ''
-          }
+          };
+          this.getCart();
           alert('您已完成訂單，我們會盡快與您聯繫，謝謝。')
+          window.location = 'products.html'
+
         }).catch((err) => {
           this.isLoading = false;
           console.log(err);
