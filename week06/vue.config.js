@@ -12,4 +12,6 @@ module.exports = {
       }),
     ],
   },
+
+  publicPath: '/hex-liveJS-missions/week06/dist/'
 };
