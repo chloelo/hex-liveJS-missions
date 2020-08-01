@@ -3,7 +3,7 @@
     <loading :active.sync="isLoading"></loading>
     <header>
       <nav id="front-nav" class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand">
           <img src="@/assets/images/logo.png" />
         </a>
         <button
@@ -21,18 +21,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <router-link class="nav-link" to="/"
-                >首頁 <span class="sr-only">(current)</span></router-link
-              >
+              <router-link class="nav-link" to="/">
+                首頁
+                <span class="sr-only">(current)</span>
+              </router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/about">關於我們</router-link>
               <!-- <a class="nav-link" href="#">關於我們</a> -->
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/products"
-                >產品列表</router-link
-              >
+              <router-link class="nav-link" to="/products">產品列表</router-link>
             </li>
 
             <li class="nav-item dropdown">
@@ -56,9 +55,7 @@
               >
                 <div class="table-responsive dropdown-cart-list">
                   <table class="table table-sm table-striped">
-                    <caption>
-                      已選擇商品
-                    </caption>
+                    <caption>已選擇商品</caption>
                     <thead>
                       <tr>
                         <th scope="col">品名</th>
@@ -75,24 +72,18 @@
                     </tbody>
                     <tfoot>
                       <tr>
-                        <td colspan="3" class="text-right">
-                          總計：{{ totalPrice | money }}
-                        </td>
+                        <td colspan="3" class="text-right">總計：{{ totalPrice | money }}</td>
                       </tr>
                     </tfoot>
                   </table>
-                  <router-link class="bg-info text-white text-center" to="/cart"
-                    >前往結帳</router-link
-                  >
+                  <router-link class="bg-info text-white text-center" to="/cart">前往結帳</router-link>
                 </div>
               </div>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <router-link class="nav-link" to="/admin/products"
-                >後臺管理</router-link
-              >
+              <router-link class="nav-link" to="/admin/products">後臺管理</router-link>
               <!-- <a class="nav-link" href="#">後臺管理</a> -->
             </li>
           </ul>
@@ -100,7 +91,7 @@
       </nav>
     </header>
 
-    <div class="py-5">
+    <div class="py-5 wrapper">
       <router-view
         @togetcart="getCart"
         @removeallcart="removeAllCart"
@@ -120,7 +111,7 @@
 
 export default {
   name: 'Home',
-  data() {
+  data () {
     return {
       isLoading: false,
       carts: [],
@@ -129,7 +120,7 @@ export default {
     };
   },
   methods: {
-    getCart() {
+    getCart () {
       this.isLoading = true;
       const api = `${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping`;
       this.$http
@@ -151,7 +142,7 @@ export default {
           console.log(err);
         });
     },
-    removeAllCart() {
+    removeAllCart () {
       const api = `${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/ec/shopping/all/product`;
       this.$http
         .delete(api)
@@ -164,7 +155,7 @@ export default {
         });
     }
   },
-  mounted() {
+  mounted () {
     this.getCart();
   }
 };

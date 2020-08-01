@@ -14,7 +14,9 @@ body {
   font-family: $dafault-font-family;
   // color: $color-gray01;
 }
-
+.wrapper {
+  min-height: calc(100vh - 143px);
+}
 a:hover {
   text-decoration: none;
 }
