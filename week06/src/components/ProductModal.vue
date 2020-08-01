@@ -13,12 +13,7 @@
           <h5 id="exampleModalLabel" class="modal-title">
             <span>{{ isNew ? '新增產品' : '修改產品資訊' }}</span>
           </h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -38,20 +33,18 @@
               <div class="form-group">
                 <label for="customFile">
                   或 上傳圖片
-                  <span v-if="imgUploading"
-                    ><i class="fas fa-spinner fa-spin"></i
-                  ></span>
+                  <span v-if="imgUploading">
+                    <font-awesome-icon icon="spinner" />
+                  </span>
+                  <!-- <span v-if="imgUploading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                  </span>-->
                 </label>
-                <input
-                  id="customFile"
-                  type="file"
-                  class="form-control"
-                  @change="uploadFile"
-                />
+                <input id="customFile" type="file" class="form-control" @change="uploadFile" />
               </div>
               <img class="img-fluid" :src="tempProduct.imageUrl[0]" />
             </div>
-            <div class=" col-sm-8">
+            <div class="col-sm-8">
               <div class="form-group">
                 <label for="title">標題</label>
                 <input
@@ -121,8 +114,7 @@
                   class="form-control"
                   placeholder="請輸入產品說明"
                   required
-                >
-                </textarea>
+                ></textarea>
               </div>
               <div class="form-group">
                 <label for="content">產品描述</label>
@@ -133,8 +125,7 @@
                   class="form-control"
                   placeholder="請輸入產品描述"
                   required
-                >
-                </textarea>
+                ></textarea>
               </div>
               <div class="form-group">
                 <div class="form-check">
@@ -151,20 +142,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-outline-secondary"
-            data-dismiss="modal"
-          >
-            取消
-          </button>
-          <button
-            type="button"
-            class="btn bg-info text-white"
-            @click="updateProduct()"
-          >
-            確認
-          </button>
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn bg-info text-white" @click="updateProduct()">確認</button>
         </div>
       </div>
     </div>
@@ -173,13 +152,13 @@
 <script>
 export default {
   props: ['isNew', 'tempProduct'],
-  data() {
+  data () {
     return {
       imgUploading: false
     };
   },
   methods: {
-    updateProduct() {
+    updateProduct () {
       let httpWay = 'post';
       let api = `${process.env.VUE_APP_APIPATH}/${process.env.VUE_APP_UUID}/admin/ec/product`;
       if (!this.isNew) {
@@ -195,7 +174,7 @@ export default {
           console.log(err);
         });
     },
-    uploadFile() {
+    uploadFile () {
       this.imgUploading = true;
       const uploadedfile = document.querySelector('#customFile').files[0];
       const formData = new FormData();
