@@ -23,3 +23,7 @@ https://chloelo.github.io/hex-liveJS-missions/week04/login.html
 #### 第五周主線任務
 
 https://chloelo.github.io/hex-liveJS-missions/week05/products.html
+
+#### 第六周主線任務
+
+https://chloelo.github.io/hex-liveJS-missions/week06/dist/

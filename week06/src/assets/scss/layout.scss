@@ -4,17 +4,70 @@ $color-third: #d82c4f;
 $color-fourth: #836849;
 $color-blue01: #44add6;
 $color-white: #fff;
+// $color-gray01: #ddd;
 $color-gray01: #707070;
-$default-font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei",
-  "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol";
+$color-gray02: #aaa;
+$dafault-font-family: -apple-system, BlinkMacSystemFont, 'Microsoft JhengHei',
+  'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol';
 body {
-  font-family: $default-font-family;
-  color: $color-gray01;
+  font-family: $dafault-font-family;
+  // color: $color-gray01;
 }
 
 a:hover {
   text-decoration: none;
+}
+.login {
+  background: url('https://images.unsplash.com/photo-1440778303588-435521a205bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
+    no-repeat center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  .formLogin-wrap {
+    max-width: 100%;
+    width: 35rem;
+    height: auto;
+    margin: 30px 15px;
+    background-color: rgba($color-white, $alpha: 0.9);
+    padding: 30px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px $color-gray02;
+  }
+  h2 {
+    color: $color-primary;
+    font-size: 32px;
+    text-align: right;
+    border-bottom: 3px solid rgba($color-primary, $alpha: 0.5);
+    margin-bottom: 15px;
+  }
+  label {
+    color: $color-primary;
+    display: block;
+    text-align: left;
+  }
+  input {
+    border-radius: 25px;
+    background-color: rgba($color-white, $alpha: 0.3);
+  }
+  .btn-login {
+    background-color: $color-primary;
+    color: $color-white;
+    border-radius: 25px;
+    width: 100%;
+    font-size: 120%;
+    margin-top: 0.5rem;
+  }
+
+  .form-control {
+    border: 1px solid rgba($color-primary, $alpha: 0.5);
+    &:focus {
+      background-color: rgba($color-white, $alpha: 0.3);
+    }
+  }
 }
 .cart-popup {
   min-width: 280px;
@@ -208,4 +261,79 @@ a:hover {
   color: $color-white;
   text-align: center;
   padding: 1rem;
+}
+
+// back 管理頁樣式
+.backpage-products {
+  h1 {
+    margin-bottom: 0;
+    font-size: 30px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+  }
+  .sm-img {
+    max-width: 80px;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 29px;
+    margin-bottom: 0;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: default;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 21px;
+    width: 21px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: var(--info);
+  }
+  input:focus + .slider {
+    box-shadow: 0 0 1px var(--info);
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(21px);
+    -ms-transform: translateX(21px);
+    transform: translateX(21px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 29px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
 }
