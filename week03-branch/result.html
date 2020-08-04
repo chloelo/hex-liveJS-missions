@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>五大性格特質心理測驗 (簡版)</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/layout.css">
+  <script src="https://use.fontawesome.com/16cb87d9dd.js"></script>
+</head>
+
+<body>
+  <div id="app" class="wrap zone_result">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <h1>
+          <a class="navbar-brand" href="index.html">
+            <span class="ch">
+              五大性格特質心理測驗(簡版)
+            </span><br>
+            <span class="en">Big Five personality traits test (simple version)</span>
+          </a>
+        </h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active" href="#">情緒不穩定性 <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">外向性</a>
+            <a class="nav-item nav-link" href="#">經驗開放性</a>
+            <a class="nav-item nav-link" href="#">親和性</a>
+            <a class="nav-item nav-link" href="#">盡責性</a>
+          </div>
+        </div>
+      </nav>
+
+    </header>
+    <div class="hero bgs">
+      <div class="zone_title">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-4">
+              <h2 class="title">
+                <span class="ch">情緒不穩定性</span>
+                <span class="en">neuroticism</span>
+              </h2>
+            </div>
+            <div class="col-lg-5 col-md-8">
+              <p>
+                情緒不穩定性是指在調整情緒時，冒出極端消極情緒的情況與不穩定性。不穩定性高的人在面臨高壓環境時，容易有憤怒、焦慮等消極情緒湧上；不穩定性低的人則較能心平氣和面對、不太會情緒化反應。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="results">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3>中</h3>
+            <p>你的情緒不穩定性介於中間。可參考高分與低分時的說明。</p>
+            <div class="plus mt-5">
+              <p class="item_txt">
+                <strong class="level">高</strong>
+                <span>情緒不穩定性較高的你，是不是在面對不預期、碰到對自己不友善的情境時，會覺得自己有喉嚨有股氣憋著、呼吸急促、情緒高漲等狀況，久久不能平復呢？先深呼吸、喝杯水，給自己一些喘息的空間再去對付這些狀況吧。</span>
+              </p>
+              <p class="item_txt">
+                <strong class="level">低</strong>
+                <span>
+                  情緒不穩定性較低，感覺你能很好地面對各種場面，讓自己處在良好的狀態呢。不過也要記得，負面情緒其實是益友，不斷在耳邊提醒你遇到不好的事情，讓你有所警覺。
+                </span>
+              </p>
+            </div>
+          </div>
+          <div class="offset-lg-1 col-lg-3 align-self-end text-right">
+            <!-- <p>下一個：
+              <a href="#" class="link-txt">
+                <strong>外向型</strong>
+                <span class="icon_toRight"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+              </a>
+            </p> -->
+            <a href="#" class="link link-restart">
+              <span>重新測驗</span>
+              <span class="icon_toRight"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+  <script src="js/all.js"></script>
+</body>
+
+</html>
